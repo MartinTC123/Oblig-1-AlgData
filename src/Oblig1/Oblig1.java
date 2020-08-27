@@ -124,15 +124,39 @@ public class Oblig1 {
                 a[i] = oddt;
             }
         }
-        System.out.print(Arrays.toString(a));
+      //  System.out.print(Arrays.toString(a));
+    }
+
+    public static void delsortering2(int[] a){
+        int left = 0;
+        int right = a.length-1;
+        for (int i =0; i<a.length; ++i){
+            while (a[left]%2!=0){
+                left++;
+            }
+            while (a[right]%2==0) {
+                right--;
+            }
+            if(left<right){
+                int temp = a[left];
+                a[left] = a[right];
+                a[right]=temp;
+            }
+        }
+
+
+
+        System.out.println(Arrays.toString(a) + "   "+ left + right);
     }
 
     public static void main(String[] args) {
-        int[] a = {2, 20, 7, 4, 1, 6, 10, 5, 19};
+        int[] a = {2,20,7,4,1,6,10,5,19};
         int[] b = {3,3,3,4,4,5,9,10};
+
 
         // 1,5,7,19,2,4,6,10,20
         delsortering(a);
+        delsortering2(b);
 
         //System.out.println("Antall ulike verdier i en sortert tabell: " + antallUlikeSortert(b));
         //System.out.println("Antall ulike verdier i en usortert/sortert tabell: " + antallUlikeUsortert(a));
