@@ -143,9 +143,6 @@ public class Oblig1 {
                 a[right]=temp;
             }
         }
-
-
-
         System.out.println(Arrays.toString(a) + "   "+ left + right);
     }
 
