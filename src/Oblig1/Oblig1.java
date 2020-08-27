@@ -169,14 +169,40 @@ public class Oblig1 {
         System.out.print(Arrays.toString(a)+" ");
     }
 
+    public static String flett(String s, String t){
+        System.out.println(s.length());
+        String returner = "";
+        int length= 0;
+        if (s.length()>t.length()){
+             length = s.length();
+        }
+        else {
+            length = t.length();
+        }
+        for (int i = 0; i<length; i++){
+            if(s.length()>i){
+            char a = s.charAt(i);
+            returner += String.valueOf(a);
+            }
+            if(t.length()>i){
+            char b = t.charAt(i);
+            returner += String.valueOf(b);
+            }
+        }
+        return returner;
+
+    }
+
     public static void main(String[] args) {
         int[] a = {2,20,7,4,1,6,10,5,19};
         int[] b = {5,9,3,4,4,5,2,10};
+        String s = "Hei";
+        String t= "Hallo";
 
-
+        System.out.println(flett(s,t));
         // 1,5,7,19,2,4,6,10,20
-        delsortering(a);
-        delsortering2(b);
+
+        //delsortering2(b);
 
         //System.out.println("Antall ulike verdier i en sortert tabell: " + antallUlikeSortert(b));
         //System.out.println("Antall ulike verdier i en usortert/sortert tabell: " + antallUlikeUsortert(a));
