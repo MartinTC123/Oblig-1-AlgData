@@ -126,7 +126,7 @@ public class Oblig1 {
         }
       //  System.out.print(Arrays.toString(a));
     }
-
+ //Oppgave 4 - delsortering
     public static void delsortering2(int[] a){
         int left = 0;
         int right = a.length-1;
@@ -143,7 +143,21 @@ public class Oblig1 {
                 a[right]=temp;
             }
         }
-        System.out.println(Arrays.toString(a) + "   "+ left + right);
+        for(int j : a){
+        for (int i = 1; i<a.length;i++){
+            if (i<left && a[i] < a[i-1] ){
+                int temp = a[i-1];
+                a[i-1] = a[i];
+                a[i]=temp;
+            }
+            if (i>left && a[i] < a[i-1] ){
+                int temp = a[i-1];
+                a[i-1] = a[i];
+                a[i]=temp;
+            }
+        }
+        }
+        System.out.println(Arrays.toString(a));
     }
 
     public static void rotasjon(char[]a){
@@ -157,7 +171,7 @@ public class Oblig1 {
 
     public static void main(String[] args) {
         int[] a = {2,20,7,4,1,6,10,5,19};
-        int[] b = {3,3,3,4,4,5,9,10};
+        int[] b = {5,9,3,4,4,5,2,10};
 
 
         // 1,5,7,19,2,4,6,10,20
