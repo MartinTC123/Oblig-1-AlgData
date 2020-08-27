@@ -146,6 +146,15 @@ public class Oblig1 {
         System.out.println(Arrays.toString(a) + "   "+ left + right);
     }
 
+    public static void rotasjon(char[]a){
+        char temp = a[a.length - 1];
+        for (char c = (char) (a.length - 1); c > 0; c--) {
+            a[c] = a[c - 1];
+        }
+        a[0] = temp;
+        System.out.print(Arrays.toString(a)+" ");
+    }
+
     public static void main(String[] args) {
         int[] a = {2,20,7,4,1,6,10,5,19};
         int[] b = {3,3,3,4,4,5,9,10};
