@@ -162,11 +162,34 @@ public class Oblig1 {
 
     public static void rotasjon(char[]a){
         char temp = a[a.length - 1];
-        for (char c = (char) (a.length - 1); c > 0; c--) {
-            a[c] = a[c - 1];
+        for (int i = a.length - 1; i > 0; i--) {
+            a[i] = a[i - 1];
         }
         a[0] = temp;
         System.out.print(Arrays.toString(a)+" ");
+    }
+
+    public static void rotasjon2(char[]a, int k){
+        if (k < 0){
+            for (int i= 0; k < 0; k++) {
+                for (int j = 0; j < a.length - 1; j++) {
+                    char temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+            System.out.print(Arrays.toString(a));
+        }
+        else {
+            for(int i = 0; i < k; i++){
+                for (int j= a.length-1; j > 0; j--){
+                    char temp= a[j];
+                    a[j]= a[j-1];
+                    a[j - 1]= temp;
+                }
+            }
+            System.out.print(Arrays.toString(a));
+        }
     }
 
     public static String flett(String s, String t){
@@ -196,13 +219,16 @@ public class Oblig1 {
     public static void main(String[] args) {
         int[] a = {2,20,7,4,1,6,10,5,19};
         int[] b = {5,9,3,4,4,5,2,10};
+        char[]d= {'a','b','c','d','e'};
         String s = "Hei";
         String t= "Hallo";
 
-        System.out.println(flett(s,t));
+        //System.out.println(flett(s,t));
         // 1,5,7,19,2,4,6,10,20
 
-        //delsortering2(b);
+        //rotasjon2(d, -3);
+
+        //delsortering2(a);
 
         //System.out.println("Antall ulike verdier i en sortert tabell: " + antallUlikeSortert(b));
         //System.out.println("Antall ulike verdier i en usortert/sortert tabell: " + antallUlikeUsortert(a));
