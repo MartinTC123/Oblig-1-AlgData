@@ -245,25 +245,24 @@ public class Oblig1 {
         for (int i =0; i<a.length;i++){
             hjelpetabell[i] = a[i];
         }
+        for (int i = 0; i<indekstabell.length; i++){
+            indekstabell[i] = i;
+        }
+
 
             for (int i= 0; i < hjelpetabell.length; i++) {
                 for (int j = i + 1; j < hjelpetabell.length; j++) {
                     if (hjelpetabell[i] > hjelpetabell[j]) {
                         int temp = hjelpetabell[i];
                         hjelpetabell[i] = hjelpetabell[j];
-                        hjelpetabell[j] = temp; // bytter plass på a[i] og a[j] hvis den er sann.
+                        hjelpetabell[j] = temp;
+                        int temp2 = indekstabell[i];
+                        indekstabell[i] = indekstabell[j];
+                        indekstabell[j] = temp2;
                     }
                 }
             }
 
-            for (int j= 0; j<a.length;j++){
-                for (int i=0; i<a.length; i++){
-                    if(a[j] == hjelpetabell[i]){
-                        indekstabell[i]= j;
-                    }
-
-                }
-            }
             System.out.print(Arrays.toString(hjelpetabell));
             System.out.print(Arrays.toString(indekstabell));
 
