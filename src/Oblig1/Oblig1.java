@@ -195,7 +195,6 @@ public class Oblig1 {
         //Oppgave 7a-fletting
 
     public static String flett(String s, String t) {
-        System.out.println(s.length());
         String returner = "";
         int length = 0;
         if (s.length() > t.length()) {
@@ -237,6 +236,42 @@ public class Oblig1 {
             return returner;
         }
 
+        //oppgave 8
+
+        public static int [] indekssortering(int[]a){
+        int [] indekstabell = new int [a.length];
+        int [] hjelpetabell = new int [a.length];
+
+        for (int i =0; i<a.length;i++){
+            hjelpetabell[i] = a[i];
+        }
+
+            for (int i= 0; i < hjelpetabell.length; i++) {
+                for (int j = i + 1; j < hjelpetabell.length; j++) {
+                    if (hjelpetabell[i] > hjelpetabell[j]) {
+                        int temp = hjelpetabell[i];
+                        hjelpetabell[i] = hjelpetabell[j];
+                        hjelpetabell[j] = temp; // bytter plass på a[i] og a[j] hvis den er sann.
+                    }
+                }
+            }
+
+            for (int j= 0; j<a.length;j++){
+                for (int i=0; i<a.length; i++){
+                    if(a[j] == hjelpetabell[i]){
+                        indekstabell[i]= j;
+                    }
+
+                }
+            }
+            System.out.print(Arrays.toString(hjelpetabell));
+            System.out.print(Arrays.toString(indekstabell));
+
+        return indekstabell;
+        }
+
+
+
 
 
     public static void main(String[] args) {
@@ -247,13 +282,15 @@ public class Oblig1 {
         String s = "Hei";
         String t= "Hallo";
 
-        System.out.println(flett(s,t));
-        System.out.println(flettArray(c));
+
+
+      //  System.out.println(flett(s,t));
+     //   System.out.println(flettArray(c));
         // 1,5,7,19,2,4,6,10,20
 
         //rotasjon2(d, -3);
-
-        //delsortering2(a);
+        indekssortering(b);
+       // delsortering2(a);
 
         //System.out.println("Antall ulike verdier i en sortert tabell: " + antallUlikeSortert(b));
         //System.out.println("Antall ulike verdier i en usortert/sortert tabell: " + antallUlikeUsortert(a));
