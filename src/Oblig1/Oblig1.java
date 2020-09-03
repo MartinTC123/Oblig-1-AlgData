@@ -192,38 +192,63 @@ public class Oblig1 {
         }
     }
 
-    public static String flett(String s, String t){
+        //Oppgave 7a-fletting
+
+    public static String flett(String s, String t) {
         System.out.println(s.length());
         String returner = "";
-        int length= 0;
-        if (s.length()>t.length()){
-             length = s.length();
-        }
-        else {
+        int length = 0;
+        if (s.length() > t.length()) {
+            length = s.length();
+        } else {
             length = t.length();
         }
-        for (int i = 0; i<length; i++){
-            if(s.length()>i){
-            char a = s.charAt(i);
-            returner += String.valueOf(a);
+        for (int i = 0; i < length; i++) {
+            if (s.length() > i) {
+                char a = s.charAt(i);
+                returner += String.valueOf(a);
             }
-            if(t.length()>i){
-            char b = t.charAt(i);
-            returner += String.valueOf(b);
+            if (t.length() > i) {
+                char b = t.charAt(i);
+                returner += String.valueOf(b);
             }
         }
         return returner;
-
     }
+
+        //oppgave 7b-fletting
+
+        public static String flettArray(String[] s){
+        String returner = "";
+        int maxlength =0;
+            for(String a : s){
+                if(a.length()>maxlength){
+                    maxlength=a.length();
+                }
+                }
+            for (int i = 0; i<maxlength;i++){
+                for (String a:s){
+                    if (a.length()>i) {
+                        char b = a.charAt(i);
+                        returner += String.valueOf(b);
+                    }
+                }
+            }
+            return returner;
+        }
+
+
 
     public static void main(String[] args) {
         int[] a = {2,20,7,4,1,6,10,5,19};
         int[] b = {5,9,3,4,4,5,2,10};
         char[]d= {'a','b','c','d','e'};
+        String[] c= {"Hei","Hallo", "Hoi", "data"};
         String s = "Hei";
         String t= "Hallo";
 
-        //System.out.println(flett(s,t));
+        System.out.println(flett(s,t));
+        System.out.println(flettArray(c));
         // 1,5,7,19,2,4,6,10,20
 
         //rotasjon2(d, -3);
