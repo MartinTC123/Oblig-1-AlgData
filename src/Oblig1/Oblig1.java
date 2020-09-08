@@ -11,34 +11,27 @@ public class Oblig1 {
             throw new NoSuchElementException("Denne tabellen er tom!");
         }
 
-        for (int i= 0; i < a.length; i++){
-            for (int j = i +1; j < a.length; j++){
-                if (a[i] > a[j]){
-                    int temp= a[i];a[i]=a[j];a[j]= temp; // bytter plass på a[i] og a[j] hvis den er sann.
+        for (int i= 0; i < a.length-1; i++){
+                if (a[i] > a[i+1]){
+                    int temp= a[i];a[i]=a[i+1];a[i+1]= temp; // bytter plass på a[i] og a[j] hvis den er sann.
                 }
-            }
-            System.out.print(a[i] + " "); // Print for å sjekke om tabellens største verdi ligger bakerst.
         }
 
-        int max= a[0];
+        int max= a[a.length-1];
 
-        for (int i= 0; i < a.length; i++){
-            if (a[i] > max){
-                max = a[i];
-            }
-        }
+
         return max;
     }
 
     public static int ombyttinger(int[] a){
         int teller= 0;
 
-        for (int i= 0; i < a.length; i++){
-            for (int j= i + 1; j < a.length; j++){
-                if (a[i] > a[j]){
-                    int temp= a[i];a[i]=a[j];a[j]= temp;
+        for (int i= 0; i < a.length-1; i++){
+                if (a[i] > a[i+1]){
+                    int temp= a[i];
+                    a[i]=a[i+1];
+                    a[i+1]= temp;
                     teller++; // teller som øker for hver gang et et ombytte skjer.
-                }
             }
         }
         return teller;
@@ -146,6 +139,7 @@ public class Oblig1 {
 
         a[0] = temp;
         }
+
         System.out.print(Arrays.toString(a)+" ");
     }
     //Oppgave 6
@@ -257,11 +251,12 @@ public class Oblig1 {
         String s = "Hei";
         String t= "Hallo";
         char [] f = new char[0];
-
-        rotasjon(f);
+        int[] e = {1, 4, 3, 7, 6, 5, 10, 2, 9, 8};
+        maks(e);
       //  System.out.println(flett(s,t));
      //   System.out.println(flettArray(c));
         // 1,5,7,19,2,4,6,10,20
+
 
         //rotasjon2(d, -3);
        // indekssortering(b);
