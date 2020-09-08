@@ -19,7 +19,6 @@ public class Oblig1 {
 
         int max= a[a.length-1];
 
-
         return max;
     }
 
@@ -96,7 +95,7 @@ public class Oblig1 {
 
  //Oppgave 4 - delsortering
     public static void delsortering(int[] a){
-        if (a.length<=1){
+        if (a.length<=1){       //Trenger ikke sortere dersom det er 0 eller 1 element
             return;
         }
         int left = 0;
@@ -104,25 +103,25 @@ public class Oblig1 {
         boolean partall = false;
         boolean oddetall = false;
         for (int i =0; i<a.length; ++i){
-            while (a[left]%2!=0  && left<a.length-1){
+            while (a[left]%2!=0  && left<a.length-1){   //sjekker for oddetall
                 left++;
                 oddetall = true;
             }
-            while (a[right]%2==0 && right>0) {
+            while (a[right]%2==0 && right>0) {          //sjekker for partall
                 right--;
                 partall = true;
             }
-            if(left<right ){
+            if(left<right ){                        //Bytter plass paa oddetall og partall
                 int temp = a[left];
                 a[left] = a[right];
                 a[right]=temp;
             }
         }
-        if(partall && oddetall){
+        if(partall && oddetall){                //Hvis arrayet har baade partall og odetall sorter dette
         sorter(a,0,left-1);
         sorter(a,left,a.length-1);
         }
-        else{
+        else{                                   // hvis arrayet har enten bare partall eller oddetall sorter dette
             sorter(a,0,a.length-1);
         }
     }
@@ -167,13 +166,13 @@ public class Oblig1 {
     public static String flett(String s, String t) {
         String returner = "";
         int length = 0;
-        if (s.length() > t.length()) {
+        if (s.length() > t.length()) {          //Sjekker hvilken String som er lengst for aa hente lengden
             length = s.length();
         } else {
             length = t.length();
         }
         for (int i = 0; i < length; i++) {
-            if (s.length() > i) {
+            if (s.length() > i) {               //Hvis i er mindre enn lengden paa strengen skal den legge til ny bokstav i returner strengen og gaa til neste streng sitt tilsvarende element
                 char a = s.charAt(i);
                 returner += String.valueOf(a);
             }
@@ -185,19 +184,19 @@ public class Oblig1 {
         return returner;
     }
 
-        //oppgave 7b-fletting
+        //Oppgave 7b-fletting
 
         public static String flett(String... s){
         String returner = "";
         int maxlength =0;
-            for(String a : s){
+            for(String a : s){                      //Gaar gjennom strengene som tas inn for aa finne den lengste
                 if(a.length()>maxlength){
                     maxlength=a.length();
                 }
                 }
-            for (int i = 0; i<maxlength;i++){
+            for (int i = 0; i<maxlength;i++){       //Forsikrer oss om at vi ikke gaar forbi den lengste strengen
                 for (String a:s){
-                    if (a.length()>i) {
+                    if (a.length()>i) {             //Looper gjennom hver streng sitt element (i) for aa legge det inn i returner strengen
                         char b = a.charAt(i);
                         returner += String.valueOf(b);
                     }
@@ -206,21 +205,21 @@ public class Oblig1 {
             return returner;
         }
 
-        //oppgave 8
+        //Oppgave 8
 
         public static int [] indekssortering(int[]a){
         int [] indekstabell = new int [a.length];
         int [] hjelpetabell = new int [a.length];
 
-        for (int i =0; i<a.length;i++){
+        for (int i =0; i<a.length;i++){                 //oppretter en hjelpetabell for aa ikke endre paa selve arrayet som tas inn
             hjelpetabell[i] = a[i];
         }
-        for (int i = 0; i<indekstabell.length; i++){
+        for (int i = 0; i<indekstabell.length; i++){            //Oppretter en indekstabell med lengde som a for aa kunne flytte på disse
             indekstabell[i] = i;
         }
 
             for (int i= 0; i < hjelpetabell.length; i++) {
-                for (int j = i + 1; j < hjelpetabell.length; j++) {
+                for (int j = i + 1; j < hjelpetabell.length; j++) {         //Sorterer hjelpetabellen og samtidig flytter paa indexene i tilsvarende posisjon i indextabellen naar den flytter paa to tall i arrrayet
                     if (hjelpetabell[i] > hjelpetabell[j]) {
                         int temp = hjelpetabell[i];
                         hjelpetabell[i] = hjelpetabell[j];
@@ -234,9 +233,18 @@ public class Oblig1 {
 
         return indekstabell;
         }
+    ///// Oppgave 9 //////////////////////////////////////
+    public static int[] tredjeMin(int[] a) {
+        throw new UnsupportedOperationException();
+    }
 
-
-
+    ///// Oppgave 10 //////////////////////////////////////
+    public static int bokstavNr(char bokstav) {
+        throw new UnsupportedOperationException();
+    }
+    public static boolean inneholdt(String a, String b) {
+        throw new UnsupportedOperationException();
+    }
 
 
     public static void main(String[] args) {
@@ -247,10 +255,6 @@ public class Oblig1 {
         String[] c= {"Hei","Hallo", "Hoi", "data"};
         String s = "Hei";
         String t= "Hallo";
-
-
-
-
 
        // rotasjon(d, -3);
      //   indekssortering(b);
