@@ -137,11 +137,15 @@ public class Oblig1 {
 
     //Oppgave 5
     public static void rotasjon(char[]a){
+        if (a.length-1 >0){
         char temp = a[a.length - 1];
+
         for (int i = a.length - 1; i > 0; i--) {
             a[i] = a[i - 1];
         }
+
         a[0] = temp;
+        }
         System.out.print(Arrays.toString(a)+" ");
     }
     //Oppgave 6
@@ -252,15 +256,15 @@ public class Oblig1 {
         String[] c= {"Hei","Hallo", "Hoi", "data"};
         String s = "Hei";
         String t= "Hallo";
+        char [] f = new char[0];
 
-
-
+        rotasjon(f);
       //  System.out.println(flett(s,t));
      //   System.out.println(flettArray(c));
         // 1,5,7,19,2,4,6,10,20
 
         //rotasjon2(d, -3);
-        indekssortering(b);
+       // indekssortering(b);
        // delsortering2(a);
 
         //System.out.println("Antall ulike verdier i en sortert tabell: " + antallUlikeSortert(b));
