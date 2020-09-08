@@ -81,7 +81,7 @@ public class Oblig1 {
         int j= 0;
 
         for (int i = 1; i < a.length; i++){
-            for (j= 0; j < a.length; j++){
+            for ( j= 0; j < a.length; j++){
                 if (a[i] == a[j]){
                     break;
                 }
@@ -96,36 +96,35 @@ public class Oblig1 {
 
  //Oppgave 4 - delsortering
     public static void delsortering(int[] a){
+        if (a.length<=1){
+            return;
+        }
         int left = 0;
         int right = a.length-1;
+        boolean partall = false;
+        boolean oddetall = false;
         for (int i =0; i<a.length; ++i){
-            while (a[left]%2!=0){
+            while (a[left]%2!=0  && left<a.length-1){
                 left++;
+                oddetall = true;
             }
-            while (a[right]%2==0) {
+            while (a[right]%2==0 && right>0) {
                 right--;
+                partall = true;
             }
-            if(left<right){
+            if(left<right ){
                 int temp = a[left];
                 a[left] = a[right];
                 a[right]=temp;
             }
         }
-        for(int j : a){
-        for (int i = 1; i<a.length;i++){
-            if (i<left && a[i] < a[i-1] ){
-                int temp = a[i-1];
-                a[i-1] = a[i];
-                a[i]=temp;
-            }
-            if (i>left && a[i] < a[i-1] ){
-                int temp = a[i-1];
-                a[i-1] = a[i];
-                a[i]=temp;
-            }
+        if(partall && oddetall){
+        sorter(a,0,left-1);
+        sorter(a,left,a.length-1);
         }
+        else{
+            sorter(a,0,a.length-1);
         }
-        System.out.println(Arrays.toString(a));
     }
 
     //Oppgave 5
@@ -140,7 +139,6 @@ public class Oblig1 {
         a[0] = temp;
         }
 
-        System.out.print(Arrays.toString(a)+" ");
     }
     //Oppgave 6
     public static void rotasjon(char[]a, int k){
@@ -152,7 +150,6 @@ public class Oblig1 {
                     a[j + 1] = temp;
                 }
             }
-            System.out.print(Arrays.toString(a));
         }
         else {
             for(int i = 0; i < k; i++){
@@ -162,7 +159,6 @@ public class Oblig1 {
                     a[j - 1]= temp;
                 }
             }
-            System.out.print(Arrays.toString(a));
         }
     }
 
@@ -245,7 +241,8 @@ public class Oblig1 {
 
     public static void main(String[] args) {
         int[] a = {2,20,7,4,1,6,10,5,19};
-        int[] b = {};
+        int[] b = {4,2,8,10,6};
+        int [] e ={3,9,1,27,15};
         char[]d= {'a','b','c','d','e'};
         String[] c= {"Hei","Hallo", "Hoi", "data"};
         String s = "Hei";
@@ -254,12 +251,46 @@ public class Oblig1 {
 
 
 
-        rotasjon(d, -3);
-        indekssortering(b);
+
+       // rotasjon(d, -3);
+     //   indekssortering(b);
         delsortering(a);
-
-
+        delsortering(b);
+        delsortering(e);
 
     }
+    // Hjelpemetoder
+    public static void sorter(int [] a, int begin, int end ){
+        if (begin >= end) {
+            return;
+        }
+
+        int pivotIndex = begin + (end - begin) / 2;
+        int pivot = a[pivotIndex];
+        int i = begin;
+        int j = end;
+
+        while (i <= j) {
+            while (a[i] < pivot) {
+                i++;
+            }
+            while (a[j] > pivot) {
+                j--;
+            }
+            if (i <= j) {
+                Oblig1Test.bytt(a,i,j);
+                i++;
+                j--;
+            }
+        }
+
+        if (begin < j) {
+            sorter(a, begin, j);
+        }
+        if (end > i) {
+            sorter(a, i, end);
+        }
+    }
+
 }
 
