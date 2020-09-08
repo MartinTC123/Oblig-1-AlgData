@@ -250,23 +250,15 @@ public class Oblig1 {
         String[] c= {"Hei","Hallo", "Hoi", "data"};
         String s = "Hei";
         String t= "Hallo";
-        char [] f = new char[0];
-        int[] e = {1, 4, 3, 7, 6, 5, 10, 2, 9, 8};
-        maks(e);
-      //  System.out.println(flett(s,t));
-     //   System.out.println(flettArray(c));
-        // 1,5,7,19,2,4,6,10,20
 
 
-        //rotasjon2(d, -3);
-       // indekssortering(b);
-       // delsortering2(a);
 
-        //System.out.println("Antall ulike verdier i en sortert tabell: " + antallUlikeSortert(b));
-        //System.out.println("Antall ulike verdier i en usortert/sortert tabell: " + antallUlikeUsortert(a));
 
-        //System.out.println("Antall ombyttinger: " + ombyttinger(a));
-        //System.out.println("\n" + "Den største verdien i tabellen er: " + maks(a));
+        rotasjon(d, -3);
+        indekssortering(b);
+        delsortering(a);
+
+
 
     }
 }
