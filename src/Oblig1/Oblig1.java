@@ -100,34 +100,9 @@ public class Oblig1 {
         return teller;
     }
 
-    // Oppgave 4 (Metoden
-    public static void delsortering(int[]a){
-        int part= 0;
-        int oddt= 0;
 
-        for (int i= 0; i < a.length; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[i] > a[j]) {
-                    int temp = a[i];a[i] = a[j];a[j] = temp; // bytter plass på a[i] og a[j] hvis den er sann.
-                }
-            }
-        }
-
-        for (int i= 0; i < a.length; i++){
-            if (a[i] % 2 == 0){
-                a[i]= part;
-            }
-        }
-
-        for (int i= 0; i < a.length; i++){
-            if (a[i] % 2 != 0){
-                a[i] = oddt;
-            }
-        }
-      //  System.out.print(Arrays.toString(a));
-    }
  //Oppgave 4 - delsortering
-    public static void delsortering2(int[] a){
+    public static void delsortering(int[] a){
         int left = 0;
         int right = a.length-1;
         for (int i =0; i<a.length; ++i){
@@ -160,6 +135,7 @@ public class Oblig1 {
         System.out.println(Arrays.toString(a));
     }
 
+    //Oppgave 5
     public static void rotasjon(char[]a){
         char temp = a[a.length - 1];
         for (int i = a.length - 1; i > 0; i--) {
@@ -168,8 +144,8 @@ public class Oblig1 {
         a[0] = temp;
         System.out.print(Arrays.toString(a)+" ");
     }
-
-    public static void rotasjon2(char[]a, int k){
+    //Oppgave 6
+    public static void rotasjon(char[]a, int k){
         if (k < 0){
             for (int i= 0; k < 0; k++) {
                 for (int j = 0; j < a.length - 1; j++) {
@@ -217,7 +193,7 @@ public class Oblig1 {
 
         //oppgave 7b-fletting
 
-        public static String flettArray(String[] s){
+        public static String flett(String[] s){
         String returner = "";
         int maxlength =0;
             for(String a : s){
@@ -249,7 +225,6 @@ public class Oblig1 {
             indekstabell[i] = i;
         }
 
-
             for (int i= 0; i < hjelpetabell.length; i++) {
                 for (int j = i + 1; j < hjelpetabell.length; j++) {
                     if (hjelpetabell[i] > hjelpetabell[j]) {
@@ -263,9 +238,6 @@ public class Oblig1 {
                 }
             }
 
-            System.out.print(Arrays.toString(hjelpetabell));
-            System.out.print(Arrays.toString(indekstabell));
-
         return indekstabell;
         }
 
@@ -275,7 +247,7 @@ public class Oblig1 {
 
     public static void main(String[] args) {
         int[] a = {2,20,7,4,1,6,10,5,19};
-        int[] b = {5,9,3,4,4,5,2,10};
+        int[] b = {};
         char[]d= {'a','b','c','d','e'};
         String[] c= {"Hei","Hallo", "Hoi", "data"};
         String s = "Hei";
