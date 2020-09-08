@@ -193,7 +193,7 @@ public class Oblig1 {
 
         //oppgave 7b-fletting
 
-        public static String flett(String[] s){
+        public static String flett(String... s){
         String returner = "";
         int maxlength =0;
             for(String a : s){

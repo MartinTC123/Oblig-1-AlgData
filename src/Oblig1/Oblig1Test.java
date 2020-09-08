@@ -710,7 +710,7 @@ public class Oblig1Test {
 
         assertEquals(0, antallFeil, "Du har for mange feil i oppgave 8");
     }
-
+/*
     ///// Oppgave 9 //////////////////////////////////////
     @org.junit.jupiter.api.Test
     void oppgave9() {
@@ -802,6 +802,8 @@ public class Oblig1Test {
         assertEquals(0, antallFeil, "Du har for mange feil i oppgave 9");
     }
 
+ */
+/*
     ///// Oppgave 10 //////////////////////////////////////
     @org.junit.jupiter.api.Test
     void oppgave10() {
@@ -935,7 +937,7 @@ public class Oblig1Test {
         }
         assertEquals(0, antallFeil, "Du har for mange feil i oppgave 10");
     }
-
+*/
     ///// Hjelpemetoder /////////////////////////////
 
     public static void bytt(int[] a, int i, int j) {
