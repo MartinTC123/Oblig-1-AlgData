@@ -247,23 +247,6 @@ public class Oblig1 {
         throw new UnsupportedOperationException();
     }
 
-
-    public static void main(String[] args) {
-        int[] a = {2,20,7,4,1,6,10,5,19};
-        int[] b = {4,2,8,10,6};
-        int [] e ={3,9,1,27,15};
-        char[]d= {'a','b','c','d','e'};
-        String[] c= {"Hei","Hallo", "Hoi", "data"};
-        String s = "Hei";
-        String t= "Hallo";
-
-       // rotasjon(d, -3);
-     //   indekssortering(b);
-        delsortering(a);
-        delsortering(b);
-        delsortering(e);
-
-    }
     // Hjelpemetoder
     public static void sorter(int [] a, int begin, int end ){
         if (begin >= end) {
