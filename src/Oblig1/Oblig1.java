@@ -137,31 +137,32 @@ public class Oblig1 {
 
         a[0] = temp;
         }
-
     }
+
     //Oppgave 6
     public static void rotasjon(char[]a, int k){
-        if (k < 0){
-            for (int i= 0; k < 0; k++) {
-                for (int j = 0; j < a.length - 1; j++) {
-                    char temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
+        if (a.length < 1){
+            return;
         }
-        else {
-            for(int i = 0; i < k; i++){
-                for (int j= a.length-1; j > 0; j--){
-                    char temp= a[j];
-                    a[j]= a[j-1];
-                    a[j - 1]= temp;
-                }
-            }
+        else if (k == 0){
+            return;
         }
+
+        int x= k %= a.length;
+
+        if (x < 0){
+            k= k * (-1);
+            k = a.length - k;
+        }
+
+        char[]hTabell = Arrays.copyOfRange(a, a.length - k, a.length);
+        for (int i = a.length - 1; i >= k; i--){
+            a[i] = a[i -k];
+        }
+        System.arraycopy(hTabell, 0, a,0,k);
     }
 
-        //Oppgave 7a-fletting
+    //Oppgave 7a-fletting
 
     public static String flett(String s, String t) {
         String returner = "";
