@@ -167,7 +167,7 @@ public class Oblig1 {
     public static String flett(String s, String t) {
         String returner = "";
         int length = 0;
-        if (s.length() > t.length()) {          //Sjekker hvilken String som er lengst for aa hente lengden
+        if (s.length() > t.length()) {          //Sjekker hvilken String som er lengst for aa hente lengden. Gir warning, men har gaatt ut fra at vi skal unngaa aa bruke kall på innebygde java metoder
             length = s.length();
         } else {
             length = t.length();
@@ -175,7 +175,7 @@ public class Oblig1 {
         for (int i = 0; i < length; i++) {
             if (s.length() > i) {               //Hvis i er mindre enn lengden paa strengen skal den legge til ny bokstav i returner strengen og gaa til neste streng sitt tilsvarende element
                 char a = s.charAt(i);
-                returner += String.valueOf(a);
+                returner += String.valueOf(a);  // Gir warning at vi kunne brukt stringbuilder, men gikk ut fra her at det skal gjores manuelt
             }
             if (t.length() > i) {
                 char b = t.charAt(i);
