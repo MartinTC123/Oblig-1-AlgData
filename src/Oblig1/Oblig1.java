@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 public class Oblig1 {
 
-    //Oppgave 1 (Metoder: ferdig)
+    //Oppgave 1
     public static int maks(int[]a){
         if (a.length == 0){
             throw new NoSuchElementException("Denne tabellen er tom!");
@@ -36,7 +36,7 @@ public class Oblig1 {
         return teller;
     }
 
-    //Oppgave 2 (Metode: ferdig)
+    //Oppgave 2
     public static int antallUlikeSortert(int[]a){
         int teller= 1;
 
@@ -70,7 +70,7 @@ public class Oblig1 {
         return teller;
     }
 
-    // Oppgave 3 (Metode: ferdig)
+    // Oppgave 3
     public static int antallUlikeUsortert(int[]a){
         if (a.length == 0){
             return 0;
@@ -234,12 +234,12 @@ public class Oblig1 {
 
         return indekstabell;
         }
-    ///// Oppgave 9 //////////////////////////////////////
+    ///// Oppgave 9 //////////////////////////////////////Ikke gjort
     public static int[] tredjeMin(int[] a) {
         throw new UnsupportedOperationException();
     }
 
-    ///// Oppgave 10 //////////////////////////////////////
+    ///// Oppgave 10 //////////////////////////////////////Ikke gjort
     public static int bokstavNr(char bokstav) {
         throw new UnsupportedOperationException();
     }
